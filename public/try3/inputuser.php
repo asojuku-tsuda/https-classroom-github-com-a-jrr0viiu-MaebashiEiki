@@ -22,7 +22,7 @@ if (!is_string($username) || trim($username) === '') {
 } elseif (mb_strlen($username) > 20) {
   die("名前は20文字以内で入力してください。");
 }elseif
-(!mb_ereg('^[ぁ-んァ-ン一-龥ーa-zA-Z\s]+$', $username)) {
+(!mb_ereg('^[ぁ-んァ-ン一-龥々ー]+$', $username)) {
     die("名前は20文字以内の日本語（または英字）で入力してください。");
 }
 
@@ -32,8 +32,8 @@ if (!is_string($useraddress) || trim($useraddress) === '') {
 } elseif(mb_strlen($useraddress) > 20) {
   die("住所は20文字以内で入力してください。");
 }elseif  
- (!mb_ereg('^[ぁ-んァ-ン一-龥ーa-zA-Z0-9\s\-ー]+$', $useraddress)) {
-    die("住所は50文字以内の日本語（または一部英数字記号）で入力してください。");
+ (!mb_ereg('^[ぁ-んァ-ン一-龥々ー０-９0-9ー－ー ]+$', $useraddress)) {
+    die("住所は50文字以内の日本語で入力してください。");
 }
 
 // メールアドレス：必須・100文字以内・特定文字のみ許可
